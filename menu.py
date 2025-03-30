@@ -23,6 +23,7 @@ def main():
 
     while True:
         mostrar_menu()
+        print(lista_numeros)
         opcion = input("Selecciona una opción: ")
 
         if opcion == "1":
