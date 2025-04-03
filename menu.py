@@ -4,6 +4,7 @@ import mediana
 import media_recortada
 import varianza
 import desviacion
+import percentil
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -18,7 +19,8 @@ def mostrar_menu():
     print("7. Mostrar la lista actual")
     print("8. Cambiar la lista de números")
     print("9. Diagramas")
-    print("10. Salir")
+    print("10. Percentiles")
+    print("11. Salir")
 
 def mostrar_histograma(lista):
     sns.histplot(lista, bins=10, color='#722F37', kde=True)
@@ -101,6 +103,9 @@ def main():
         elif opcion == "9":
             mostrar_diagramas(lista_numeros)
         elif opcion == "10":
+            porcentaje = float(input("Ingresa el número de percentil (ejemplo: 50 para 50%): "))
+            print(f"El percentil {porcentaje}% es:", percentil.calcular_percentil(lista_numeros, porcentaje))  
+        elif opcion == "11":
             print("Saliendo del programa...")
             break
         else:
